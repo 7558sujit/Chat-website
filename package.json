@@ -1,35 +1,39 @@
 {
-  "name": "webidl-conversions",
-  "version": "7.0.0",
-  "description": "Implements the WebIDL algorithms for converting to and from JavaScript values",
-  "main": "lib/index.js",
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
     "lint": "eslint .",
-    "test": "mocha test/*.js",
-    "test-no-sab": "mocha --parallel --jobs 2 --require test/helpers/delete-sab.js test/*.js",
-    "coverage": "nyc mocha test/*.js"
+    "preview": "vite preview"
   },
-  "_scripts_comments": {
-    "test-no-sab": "Node.js internals are broken by deleting SharedArrayBuffer if you run tests on the main thread. Using Mocha's parallel mode avoids this."
+  "dependencies": {
+    "axios": "^1.7.7",
+    "chat-app": "file:..",
+    "lucide-react": "^0.459.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.28.0",
+    "socket.io-client": "^4.8.1",
+    "zustand": "^5.0.1"
   },
-  "repository": "jsdom/webidl-conversions",
-  "keywords": [
-    "webidl",
-    "web",
-    "types"
-  ],
-  "files": [
-    "lib/"
-  ],
-  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
-  "license": "BSD-2-Clause",
   "devDependencies": {
-    "@domenic/eslint-config": "^1.3.0",
-    "eslint": "^7.32.0",
-    "mocha": "^9.1.1",
-    "nyc": "^15.1.0"
-  },
-  "engines": {
-    "node": ">=12"
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.14",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "vite": "^5.4.10"
   }
 }
