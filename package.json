@@ -1,29 +1,35 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "name": "webidl-conversions",
+  "version": "7.0.0",
+  "description": "Implements the WebIDL algorithms for converting to and from JavaScript values",
+  "main": "lib/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "lint": "eslint .",
+    "test": "mocha test/*.js",
+    "test-no-sab": "mocha --parallel --jobs 2 --require test/helpers/delete-sab.js test/*.js",
+    "coverage": "nyc mocha test/*.js"
   },
-  "keywords": [],
-  "author": "",
-  "type": "module",
-  "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "chat-app": "file:..",
-    "cloudinary": "^2.5.1",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.8.1",
-    "socket.io": "^4.8.1"
+  "_scripts_comments": {
+    "test-no-sab": "Node.js internals are broken by deleting SharedArrayBuffer if you run tests on the main thread. Using Mocha's parallel mode avoids this."
   },
+  "repository": "jsdom/webidl-conversions",
+  "keywords": [
+    "webidl",
+    "web",
+    "types"
+  ],
+  "files": [
+    "lib/"
+  ],
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "BSD-2-Clause",
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "@domenic/eslint-config": "^1.3.0",
+    "eslint": "^7.32.0",
+    "mocha": "^9.1.1",
+    "nyc": "^15.1.0"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }
